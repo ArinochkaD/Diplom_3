@@ -56,3 +56,7 @@ class BasePage():
             source.dispatchEvent(new DragEvent('dragend', {dataTransfer: dataTransfer, bubbles: true}));
         """, first, second)
         return
+
+    @allure.step('Подождать изменения данных.')
+    def wait_for_value_change(self, condition_func):
+        return WebDriverWait(self.driver, 10).until(lambda driver: condition_func())

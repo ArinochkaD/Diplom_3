@@ -23,7 +23,3 @@ def driver(request):
     driver.maximize_window()
     yield driver
     driver.quit()
-
-@pytest.fixture
-def test_credentials():
-    return Credentials('Arina', 'arinakhugaeva3637000@bk.ru', '123456')
