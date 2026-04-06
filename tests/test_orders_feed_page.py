@@ -2,7 +2,7 @@ import allure
 
 from pages.main_page import MainPage
 from pages.orders_feed_page import OrdersFeedPage
-from utils.constants import TEST_CREDENTIALS, Urls
+from utils.constants import Credentials, Urls
 
 class TestOrdersFeedPage:
     @allure.feature('Функциональность создания нового заказа.')
@@ -11,7 +11,7 @@ class TestOrdersFeedPage:
         orders_feed_page = OrdersFeedPage(driver)
         main_page = MainPage(driver)
         main_page.open_page()
-        main_page.make_login(TEST_CREDENTIALS)
+        main_page.make_login(Credentials.test())
         orders_feed_page.open_page()
         old_count = orders_feed_page.get_all_orders_count()
         main_page.click_constructor_button()
@@ -30,7 +30,7 @@ class TestOrdersFeedPage:
         orders_feed_page = OrdersFeedPage(driver)
         main_page = MainPage(driver)
         main_page.open_page()
-        main_page.make_login(TEST_CREDENTIALS)
+        main_page.make_login(Credentials.test())
         orders_feed_page.open_page()
         old_count = orders_feed_page.get_today_orders_count()
         main_page.click_constructor_button()
@@ -49,7 +49,7 @@ class TestOrdersFeedPage:
         orders_feed_page = OrdersFeedPage(driver)
         main_page = MainPage(driver)
         main_page.open_page()
-        main_page.make_login(TEST_CREDENTIALS)
+        main_page.make_login(Credentials.test())
         orders_feed_page.open_page()
         main_page.click_constructor_button()
         main_page.add_bun_to_order()
